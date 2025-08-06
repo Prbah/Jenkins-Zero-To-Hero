@@ -9,7 +9,7 @@ pipeline {
     stage('Checkout') {
       steps {
         sh 'echo passed'
-        //git branch: 'main', url: 'https://github.com/iam-veeramalla/Jenkins-Zero-To-Hero.git'
+        //git branch: 'main', url: 'https://github.com/Prbah/Jenkins-Zero-To-Hero.git'
       }
     }
     stage('Build and Test') {
@@ -19,7 +19,7 @@ pipeline {
         sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean package'
       }
     }
- stage('Static Code Analysis') {
+    stage('Static Code Analysis') {
       agent {
         docker {
           image 'maven:3.8.7-openjdk-17'  // Use Java 17 image here for Sonar analysis
